@@ -45,7 +45,7 @@ export function ProjectMedia({
   return (
     <>
       <Image
-        src={image.src}
+        src={resolvePath(image.src)}
         alt={image.caption}
         fill
         sizes={

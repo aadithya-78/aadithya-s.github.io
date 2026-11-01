@@ -117,7 +117,7 @@ function ImageGallery({
           aria-label={`View full resolution image: ${current.caption}`}
         >
           <Image
-            src={current.src}
+            src={resolvePath(current.src)}
             alt={current.caption}
             width={current.width}
             height={current.height}
@@ -178,7 +178,7 @@ function ImageGallery({
               title={img.caption}
             >
               <Image
-                src={img.src}
+                src={resolvePath(img.src)}
                 alt=""
                 width={80}
                 height={60}
@@ -365,7 +365,7 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
 
             <div className="lightbox-viewer">
               <Image
-                src={lightboxData.images[lightboxData.index]?.src || ""}
+                src={resolvePath(lightboxData.images[lightboxData.index]?.src || "")}
                 alt={lightboxData.images[lightboxData.index]?.caption || ""}
                 width={lightboxData.images[lightboxData.index]?.width || 1500}
                 height={lightboxData.images[lightboxData.index]?.height || 1000}

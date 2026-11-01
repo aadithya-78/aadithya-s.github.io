@@ -9,7 +9,7 @@ export function CertificateViewer() {
   const [isOpen, setIsOpen] = useState(false);
 
   const pdfUrl = resolvePath("/documents/Aadithya_BE_Degree_Certificate.pdf");
-  const imgUrl = "/images/degree-certificate.png";
+  const imgUrl = resolvePath("/images/degree-certificate.png");
 
   return (
     <div className="certificate-section-card">

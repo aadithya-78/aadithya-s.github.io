@@ -5,6 +5,7 @@ import { ProjectShowcase } from "@/components/projects/project-showcase";
 import { CertificateViewer } from "@/components/certificate-viewer";
 import { ContactAction } from "@/components/layout";
 import { MapPin, ArrowDown, Phone } from "lucide-react";
+import { resolvePath } from "@/lib/utils";
 
 export default function Home() {
   const person = {
@@ -72,7 +73,7 @@ export default function Home() {
               <div className="hero-photo-showcase">
                 <div className="hero-photo-frame">
                   <Image
-                    src={profile.avatar}
+                    src={resolvePath(profile.avatar)}
                     alt={profile.name}
                     width={460}
                     height={307}

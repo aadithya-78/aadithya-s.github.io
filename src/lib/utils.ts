@@ -8,7 +8,12 @@ export function resolvePath(path: string): string {
   ) {
     return path;
   }
-  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const base =
+    process.env.NEXT_PUBLIC_BASE_PATH !== undefined
+      ? process.env.NEXT_PUBLIC_BASE_PATH
+      : process.env.NODE_ENV === "production"
+      ? "/aadithya-s.github.io"
+      : "";
   if (!base) return path;
   return `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 }

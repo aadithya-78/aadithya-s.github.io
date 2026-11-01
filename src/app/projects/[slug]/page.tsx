@@ -184,7 +184,7 @@ export default async function ProjectPage({
                         aria-label={`Open full-size image: ${img.caption}`}
                       >
                         <Image
-                          src={img.src}
+                          src={resolvePath(img.src)}
                           alt={img.caption}
                           width={img.width}
                           height={img.height}

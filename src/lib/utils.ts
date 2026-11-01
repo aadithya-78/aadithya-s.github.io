@@ -12,3 +12,4 @@ export function resolvePath(path: string): string {
   if (!base) return path;
   return `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 }
+

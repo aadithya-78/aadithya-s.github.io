@@ -392,7 +392,7 @@ export const projects: Project[] = [
     description:
       "Embedded controller architecture and cycler hardware for automated portable peritoneal dialysis.",
     mediaNotes:
-      "Prototype & Hardware Photos: Showcases the live automated peritoneal dialysis cycler undergoing fluid cycle testing alongside custom embedded motherboard revisions v2.0 and v3.0.",
+      "Hardware, Mechanical & Prototype Visuals: Showcases the live automated peritoneal dialysis cycler undergoing fluid cycle testing, custom embedded motherboard revisions v2.0 and v3.0, and 3D CAD mechanical models (chassis layout, actuator mounting brackets, and fluidic cassette tubing guides).",
     images: [
       {
         src: "/ImagesFolder/Padmaseetha_BharathPD/BharathPDv2.0 Working.png.jpeg",
@@ -411,6 +411,24 @@ export const projects: Project[] = [
         caption: "BharathPD v3.0 Controller Board — Compact refined PCB layout for automated cycler",
         width: 1536,
         height: 1024,
+      },
+      {
+        src: "/ImagesFolder/Padmaseetha_BharathPD/BharathPDMech1.jpeg",
+        caption: "BharathPD Mechanical Design — 3D CAD internal layout showing drive motor, mounting plate, and latching mechanism",
+        width: 827,
+        height: 491,
+      },
+      {
+        src: "/ImagesFolder/Padmaseetha_BharathPD/BharathPDMech2.jpeg",
+        caption: "BharathPD Chassis Assembly — Isometric 3D CAD showing actuator packaging, PCB mounting, and enclosure structure",
+        width: 720,
+        height: 521,
+      },
+      {
+        src: "/ImagesFolder/Padmaseetha_BharathPD/BharathPDMech3.jpeg",
+        caption: "BharathPD Fluidic Cassette — Peristaltic tubing channel, valve guide routing, and transparent clamshell cover",
+        width: 700,
+        height: 523,
       },
     ],
     hardware: [

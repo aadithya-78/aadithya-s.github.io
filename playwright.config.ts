@@ -4,13 +4,10 @@ export default defineConfig({
   fullyParallel: false,
   use: {
     baseURL: "http://localhost:3000",
-    browserName: "chromium",
-    launchOptions: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
-      ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH }
-      : {},
+    channel: "chrome",
   },
   webServer: {
-    command: "npm run start",
+    command: "npx serve -l 3000 out",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 30000,

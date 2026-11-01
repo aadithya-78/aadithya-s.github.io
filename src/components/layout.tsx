@@ -17,6 +17,7 @@ import { profile } from "@/data/profile";
 import { resolvePath } from "@/lib/utils";
 const nav = [
   ["Projects", "projects"],
+  ["Degree", "education"],
   ["Contact", "contact"],
 ];
 export function Header() {

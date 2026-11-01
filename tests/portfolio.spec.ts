@@ -111,7 +111,8 @@ for (const viewport of [
     await page.goto("/");
 
     await expect(page.locator(".compact-hero-title")).toBeVisible();
-    await expect(page.locator(".compact-project-card")).toHaveCount(5);
+    await expect(page.locator(".compact-project-card")).toHaveCount(8);
+    await expect(page.locator(".certificate-section-card")).toBeVisible();
 
     expect(
       await page.evaluate(

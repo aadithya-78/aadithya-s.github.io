@@ -2,6 +2,7 @@ import Image from "next/image";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { ProjectShowcase } from "@/components/projects/project-showcase";
+import { CertificateViewer } from "@/components/certificate-viewer";
 import { ContactAction } from "@/components/layout";
 import { MapPin, ArrowDown, Phone } from "lucide-react";
 
@@ -101,6 +102,21 @@ export default function Home() {
           </div>
 
           <ProjectShowcase projects={displayProjects} />
+        </div>
+      </section>
+
+      {/* Degree Certificate Section */}
+      <section id="education" className="compact-certificate-section">
+        <div className="container">
+          <div className="compact-section-heading">
+            <div className="eyebrow">ACADEMIC CREDENTIAL</div>
+            <h2>Anna University Degree Certificate</h2>
+            <p>
+              Bachelor of Engineering in Electronics and Communication Engineering · First Class with Distinction (April 2024).
+            </p>
+          </div>
+
+          <CertificateViewer />
         </div>
       </section>
 

@@ -1,0 +1,1 @@
+Place authentic project images here. Add each image to the corresponding images array in src/data/projects.ts with a public src path, descriptive caption, width, and height. An empty array shows an explicitly labeled technical illustration.

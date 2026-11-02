@@ -11,7 +11,7 @@ export function resolvePath(path: string): string {
   const base =
     process.env.NEXT_PUBLIC_BASE_PATH !== undefined
       ? process.env.NEXT_PUBLIC_BASE_PATH
-      : process.env.NODE_ENV === "production"
+      : process.env.GITHUB_ACTIONS
       ? "/aadithya-s.github.io"
       : "";
   if (!base) return path;

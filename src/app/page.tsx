@@ -3,6 +3,7 @@ import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { ProjectShowcase } from "@/components/projects/project-showcase";
 import { CertificateViewer } from "@/components/certificate-viewer";
+import { SoftwareTools } from "@/components/software-tools";
 import { ContactAction } from "@/components/layout";
 import { MapPin, ArrowDown, Phone } from "lucide-react";
 import { resolvePath } from "@/lib/utils";
@@ -118,6 +119,21 @@ export default function Home() {
           </div>
 
           <CertificateViewer />
+        </div>
+      </section>
+
+      {/* Software & Tools Ecosystem Section */}
+      <section id="tools" className="compact-tools-section">
+        <div className="container">
+          <div className="compact-section-heading">
+            <div className="eyebrow">SOFTWARE & TOOLS ECOSYSTEM</div>
+            <h2>Software & Tool Stack</h2>
+            <p>
+              EDA design packages, embedded IDEs &amp; toolchains, application frameworks, and debugging suites used across projects.
+            </p>
+          </div>
+
+          <SoftwareTools />
         </div>
       </section>
 

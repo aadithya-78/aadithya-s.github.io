@@ -18,6 +18,7 @@ import { resolvePath } from "@/lib/utils";
 const nav = [
   ["Projects", "projects"],
   ["Degree", "education"],
+  ["Tools", "tools"],
   ["Contact", "contact"],
 ];
 export function Header() {

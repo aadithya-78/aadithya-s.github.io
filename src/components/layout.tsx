@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   ArrowUpRight,
   Menu,
@@ -25,6 +25,8 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const isClickingRef = useRef(false);
+  const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     let saved = "dark";
@@ -39,20 +41,20 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sectionIds = ["projects", "education", "tools", "contact"];
-      const scrollPos = window.scrollY + 140;
+      if (isClickingRef.current) return;
 
-      if (window.scrollY < 180) {
+      if (window.scrollY < 200) {
         setActive("");
         return;
       }
 
+      const sectionIds = ["projects", "education", "tools", "contact"];
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const id = sectionIds[i];
         const el = document.getElementById(id);
         if (el) {
-          const top = el.getBoundingClientRect().top + window.scrollY;
-          if (scrollPos >= top) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 260) {
             setActive(id);
             return;
           }
@@ -78,6 +80,14 @@ export function Header() {
   const handleNavClick = (id: string) => {
     setOpen(false);
     setActive(id);
+
+    // Lock active state during smooth scroll animation
+    isClickingRef.current = true;
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+    clickTimerRef.current = setTimeout(() => {
+      isClickingRef.current = false;
+    }, 900);
+
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });

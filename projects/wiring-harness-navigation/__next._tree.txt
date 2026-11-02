@@ -1,0 +1,5 @@
+:HL["/aadithya-s.github.io/_next/static/chunks/2wxxgux189u7i.css","style"]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"slug","t":"d","k":"wiring-harness-navigation","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"projects","h":96,"c":"$Q2"}]]
+0:{"b":"_Hzy6JI00EarS7E7S81Z9","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

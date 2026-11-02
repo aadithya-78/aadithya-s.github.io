@@ -1,0 +1,33 @@
+I gave problem statements for Electronics for the SA Engineering College Hackathon named KernelPrime 2026, in which many Students from various college participed
+
+*Hands-Free Human–Computer Interface for People with Limited Upper-Limb Mobility*
+
+Conventional computers and smartphones primarily depend on touchscreens, mice, and other hand-operated input devices, creating significant accessibility barriers for people with limited or no upper-limb mobility.
+
+Develop a head-wearable assistive device that enables users to control computers and smartphones hands-free through intuitive head movements and alternative selection mechanisms. The solution should provide accurate cursor navigation, clicking, scrolling, and essential device interactions while remaining comfortable for prolonged use and compatible with multiple operating systems without requiring specialized hardware modifications.
+
+*DripTrace – Intelligent IV Flow Rate & Empty-Bottle Monitoring System*
+
+Problem Statement:
+During intravenous (IV) therapy, abnormalities such as an empty IV bottle, stopped flow, unintended changes in drip rate, or blockage may require timely attention from healthcare staff. 
+
+Develop a low-cost, non-invasive electronic monitoring system that can be retrofitted to conventional IV setups to continuously measure the drip rate, detect abnormal or stopped flow, and identify when the IV fluid is nearing empty.
+
+The system should provide immediate local alerts and optionally communicate the IV status to a centralized nursing station, without making direct contact with the IV fluid.
+
+*SoberDrive – Vehicle Safety Interlock*
+
+Problem Statement:
+Driving under the influence of alcohol can severely reduce a driver's reaction time and control of the vehicle. Develop an embedded automotive safety system that continuously monitors the driver's alcohol level and prevents unsafe vehicle operation. If alcohol above a predefined threshold is detected before starting, the system should prevent engine activation. If a dangerous condition is detected while the vehicle is already moving, the system should initiate a controlled safety response—providing immediate warnings, restricting further acceleration and transitioning the vehicle toward a safe stopped state before permitting transmission disengagement/neutral selection.
+
+The prototype should demonstrate the concept on a scaled vehicle or automotive test rig rather than abruptly shutting off a moving vehicle, since immediate engine shutdown or forced neutral selection at speed could itself create a hazard.
+
+*AutoScope  Self-Configuring Protocol Logic Analyzer*
+
+Problem Statement:
+Debugging an unknown communication interface requires engineers to first identify the electrical standard, communication protocol, and its configuration parameters before the transmitted data can be understood.
+
+Develop an intelligent logic analyzer where the user only needs to connect the signal wires. The system should analyze signal voltage levels and timing characteristics to identify the likely electrical interface and protocol, such as UART/TTL, RS-232, RS-485, I²C, SPI or any other custom protocols. It should then automatically determine applicable parameters such as baud rate, clock frequency, data bits, parity, stop bits, CPOL, CPHA, and bus speed without requiring manual configuration.
+
+Once identified, the system should automatically decode the communication and display the received information in a human-readable text/hex format with timestamps, along with the detected protocol and communication parameters.
+

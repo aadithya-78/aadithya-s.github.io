@@ -75,17 +75,12 @@ export function Header() {
     }
   }
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string,
-  ) => {
+  const handleNavClick = (id: string) => {
     setOpen(false);
     setActive(id);
     const el = document.getElementById(id);
     if (el) {
-      e.preventDefault();
       el.scrollIntoView({ behavior: "smooth" });
-      window.history.pushState(null, "", `#${id}`);
     }
   };
 
@@ -108,7 +103,7 @@ export function Header() {
             <a
               key={id}
               href={`#${id}`}
-              onClick={(e) => handleNavClick(e, id)}
+              onClick={() => handleNavClick(id)}
               className={active === id ? "active" : ""}
             >
               {name}
@@ -126,7 +121,7 @@ export function Header() {
           </button>
           <a
             href="#contact"
-            onClick={(e) => handleNavClick(e, "contact")}
+            onClick={() => handleNavClick("contact")}
             className="nav-contact"
           >
             Let’s connect <ArrowUpRight size={15} />

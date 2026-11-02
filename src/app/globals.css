@@ -3202,6 +3202,7 @@ img {
 
 .compact-showcase-section {
   padding-block: 50px;
+  scroll-margin-top: 80px;
 }
 
 .compact-section-heading {
@@ -3752,6 +3753,7 @@ img {
   padding-block: 60px 80px;
   border-top: 1px solid var(--line);
   background: var(--panel);
+  scroll-margin-top: 80px;
 }
 
 .compact-contact-box {
@@ -3836,6 +3838,7 @@ img {
 .compact-certificate-section {
   padding: 48px 0 64px;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 80px;
 }
 
 .certificate-section-card {
@@ -4060,6 +4063,7 @@ img {
 .compact-tools-section {
   padding: 48px 0 64px;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 80px;
 }
 
 .software-tools-wrapper {

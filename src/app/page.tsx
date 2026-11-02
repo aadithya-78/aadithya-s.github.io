@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* Projects: Content & Media in One View, Ordered strictly */}
-      <section className="compact-showcase-section">
+      <section id="projects" className="compact-showcase-section">
         <div className="container">
           <div className="compact-section-heading">
             <div className="eyebrow">PORTFOLIO WORK</div>

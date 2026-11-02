@@ -23,8 +23,9 @@ const nav = [
 ];
 export function Header() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false),
-    [active, setActive] = useState("");
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+
   useEffect(() => {
     let saved = "dark";
     try {
@@ -35,19 +36,35 @@ export function Header() {
     document.documentElement.dataset.theme =
       saved === "light" ? "light" : "dark";
   }, []);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries)
-          if (entry.isIntersecting) setActive(entry.target.id);
-      },
-      { rootMargin: "-15% 0px -65% 0px" },
-    );
-    document
-      .querySelectorAll("main section[id]")
-      .forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      const sectionIds = ["projects", "education", "tools", "contact"];
+      const scrollPos = window.scrollY + 140;
+
+      if (window.scrollY < 180) {
+        setActive("");
+        return;
+      }
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (scrollPos >= top) {
+            setActive(id);
+            return;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
+
   function toggleTheme() {
     const next = document.documentElement.dataset.theme !== "light";
     document.documentElement.dataset.theme = next ? "light" : "dark";
@@ -57,6 +74,21 @@ export function Header() {
       /* The theme still works without persistence. */
     }
   }
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
+    setOpen(false);
+    setActive(id);
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${id}`);
+    }
+  };
+
   return (
     <header className="header">
       <div className="container nav-inner">
@@ -73,14 +105,14 @@ export function Header() {
           aria-label="Main navigation"
         >
           {nav.map(([name, id]) => (
-            <Link
+            <a
               key={id}
-              href={`/#${id}`}
-              onClick={() => setOpen(false)}
+              href={`#${id}`}
+              onClick={(e) => handleNavClick(e, id)}
               className={active === id ? "active" : ""}
             >
               {name}
-            </Link>
+            </a>
           ))}
         </nav>
         <div className="nav-actions">
@@ -92,9 +124,13 @@ export function Header() {
             <Moon size={18} className="theme-moon" />
             <Sun size={18} className="theme-sun" />
           </button>
-          <Link href="/#contact" className="nav-contact">
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "contact")}
+            className="nav-contact"
+          >
             Let’s connect <ArrowUpRight size={15} />
-          </Link>
+          </a>
           <button
             className="icon-button menu-toggle"
             onClick={() => setOpen(!open)}
